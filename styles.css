@@ -1,0 +1,593 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Archivo Expanded';
+    src: url('Archivo_Expanded-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Archivo Expanded';
+    src: url('Archivo_Expanded-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #000000;
+    color: #ffffff;
+    line-height: 1.5;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+}
+
+.tickets-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.ticket-card {
+    background: rgba(29, 31, 32, 0.3) radial-gradient(rgba(255, 255, 255, 0.1) 10%, transparent 1%);
+    background-size: 10px 10px;
+    border-radius: 20px;
+    border: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 0;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.ticket-card:nth-child(1)::before {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/Startup.webp');
+}
+
+.ticket-card:nth-child(2)::before {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/Scaleup.webp');
+}
+
+.ticket-card:nth-child(3)::before {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/Investor.webp');
+}
+
+.ticket-card:nth-child(4)::before {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/General-Pass.webp');
+}
+
+.ticket-card.featured {
+    border: 2px solid #FF0028 !important;
+    border-width: 2px !important;
+    outline: 0 !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    transform: translateY(-20px);
+}
+
+.ticket-card.featured:hover {
+    transform: translateY(-25px);
+}
+
+.ticket-card:not(.featured):hover {
+    transform: translateY(-5px);
+}
+
+.ticket-card:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-content {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title {
+    font-family: 'Archivo Expanded', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+    text-align: left;
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FF0028;
+}
+
+.accent {
+    color: #FF0028;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.price {
+    font-family: 'Archivo Expanded', sans-serif;
+    font-size: 70px;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    text-align: left;
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #FF0028;
+}
+
+.price-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.feature {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: left;
+}
+
+.neon-button {
+    position: relative;
+    padding: 10px 20px !important;
+    border-radius: 0.625em;
+    border: 1px solid #FF0028 !important;
+    font-size: 16px !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    background: transparent !important;
+    color: #f2f2f2 !important;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    display: block;
+}
+
+.neon-button:hover {
+    background: rgba(255, 0, 40, 0.1) !important;
+    box-shadow: 0 0 40px 10px rgba(255, 0, 40, 0.5);
+    color: #ffffff;
+}
+
+.neon-button::before {
+    content: "";
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, #FF0028, transparent);
+    box-shadow: 0 0 50px 30px #FF0028;
+    transform: skewX(-20deg);
+    transition: all 0.5s ease-in-out;
+}
+
+.neon-button:hover::before {
+    animation: neon-shine 0.6s 0s linear;
+}
+
+@keyframes neon-shine {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+}
+
+.neon-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 transparent;
+    transition: all 0.2s ease-in;
+}
+
+.card {
+    width: 100%;
+    max-width: 32rem;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #111111;
+    color: #ffffff;
+    border: 0 !important;
+    border-width: 0 !important;
+    outline: 0 !important;
+    outline-width: 0 !important;
+    outline-style: none !important;
+    border-radius: 12px;
+}
+
+.card-footer {
+    background: rgba(31, 41, 55, 0.5);
+    padding: 1.5rem;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.price-container {
+    text-align: center;
+}
+
+.price-dkk {
+    font-size: 1.125rem;
+    margin-top: 0.25rem;
+    color: rgba(156, 163, 175, 1);
+}
+
+.features-container {
+    margin-top: 1.5rem;
+}
+
+.features-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.features-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.feature-icon {
+    color: #FF0028;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+
+.button-wrapper * {
+    background: none !important;
+    border-radius: 16px;
+    border: solid 0px rgb(255, 0, 0, 0.3);
+ 
+}
+
+/* Tito Flow Styling */
+tito-flow {
+    background: rgba(29, 31, 32, 0.3) radial-gradient(rgba(255, 255, 255, 0.1) 10%, transparent 1%) !important;
+    background-size: 10px 10px !important;
+    border-radius: 20px !important;
+    border: 0 !important;
+    outline: 0 !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+tito-flow .tito-flow-header {
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: #FF0028 !important;
+    font-family: 'Archivo Expanded', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+tito-flow .tito-flow-section {
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+tito-flow .tito-flow-input,
+tito-flow input,
+tito-flow select {
+    background: rgba(29, 31, 32, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+tito-flow .tito-flow-button {
+    background: transparent !important;
+    border: 1px solid #FF0028 !important;
+    color: #f2f2f2 !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out !important;
+}
+
+tito-flow .tito-flow-button:hover {
+    background: rgba(255, 0, 40, 0.1) !important;
+    box-shadow: 0 0 40px 10px rgba(255, 0, 40, 0.5) !important;
+}
+
+/* Tito Overlay Styling */
+tito-overlay {
+    background: rgba(29, 31, 32, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+tito-overlay .tito-overlay-content {
+    background: rgba(29, 31, 32, 0.3) radial-gradient(rgba(255, 255, 255, 0.1) 10%, transparent 1%) !important;
+    background-size: 10px 10px !important;
+    border-radius: 20px !important;
+    border: 0 !important;
+    outline: 0 !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+    max-width: 90% !important;
+    width: 600px !important;
+}
+
+tito-overlay .tito-overlay-header {
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: #FF0028 !important;
+    font-family: 'Archivo Expanded', sans-serif !important;
+    font-weight: 700 !important;
+}
+
+tito-overlay .tito-overlay-section {
+    background: transparent !important;
+    border: 0 !important;
+    outline: 0 !important;
+}
+
+tito-overlay .tito-overlay-input,
+tito-overlay input,
+tito-overlay select {
+    background: rgba(29, 31, 32, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    font-family: 'Inter', sans-serif !important;
+    border-radius: 8px !important;
+}
+
+tito-overlay .tito-overlay-button {
+    background: transparent !important;
+    border: 1px solid #FF0028 !important;
+    color: #f2f2f2 !important;
+    font-family: 'Inter', sans-serif !important;
+    text-transform: uppercase !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease-in-out !important;
+    border-radius: 16px !important;
+}
+
+tito-overlay .tito-overlay-button:hover {
+    background: rgba(255, 0, 40, 0.1) !important;
+    box-shadow: 0 0 40px 10px rgba(255, 0, 40, 0.5) !important;
+}
+
+/* Tablet Styles */
+@media (max-width: 1024px) {
+    .tickets-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .ticket-card {
+        min-height: 600px;
+    }
+
+    .ticket-card.featured {
+        grid-column: span 2;
+        transform: translateY(0);
+    }
+
+    .ticket-card.featured:hover {
+        transform: translateY(-5px);
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .price {
+        font-size: 60px;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .tickets-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .ticket-card {
+        min-height: auto;
+    }
+
+    .ticket-card.featured {
+        grid-column: span 1;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+
+    .title {
+        font-size: 28px;
+    }
+
+    .price {
+        font-size: 50px;
+    }
+
+    .subtitle, 
+    .price-subtitle,
+    .feature {
+        font-size: 10px;
+    }
+
+    .ticket-card::before {
+        background-size: 40%;
+        opacity: 0.3;
+    }
+
+    .features {
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .neon-button {
+        padding: 8px 16px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* Small Mobile Styles */
+@media (max-width: 375px) {
+    .title {
+        font-size: 24px;
+    }
+
+    .price {
+        font-size: 45px;
+    }
+
+    .card-content {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+.elementor .title,
+.elementor-widget .title {
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.elementor .price,
+.elementor-widget .price {
+    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

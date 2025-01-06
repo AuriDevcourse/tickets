@@ -1,0 +1,43 @@
+.tito-ticket-list {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 20px !important;
+    background: transparent !important;
+}
+
+.tito-ticket {
+    background: white !important;
+    border-radius: 12px !important;
+    padding: 20px !important;
+    transition: all 0.2s ease !important;
+    border: none !important;
+}
+
+.tito-ticket.row {
+    background: rgba(29, 31, 32, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.tito-ticket:hover {
+    transform: translateY(-2px) !important;
+}
+
+.tito-ticket-name {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+}
+
+.tito-ticket-price {
+    font-size: 1.25rem !important;
+    font-weight: 600 !important;
+    color: #FF0028 !important;
+}
+
+.tito-wrapper {
+    background: transparent !important;
+}
+
+.tito-badge-link {
+    display: none !important;
+}
