@@ -22,7 +22,7 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: transparent;
+    background: #111111;
     color: #ffffff;
     line-height: 1.5;
     padding: 2rem;
@@ -47,8 +47,8 @@ body {
     background: rgba(29, 31, 32, 0.3) radial-gradient(rgba(255, 255, 255, 0.1) 10%, transparent 1%);
     background-size: 10px 10px;
     border-radius: 20px;
-    border: 0 !important;
-    border-width: 0 !important;
+    border: 1px solid rgba(242, 242, 242, 0.5) !important;
+    border-width: 1px !important;
     outline: 0 !important;
     outline-width: 0 !important;
     outline-style: none !important;
@@ -64,12 +64,12 @@ body {
     content: '';
     position: absolute;
     top: 0;
-    left: 20%;
+    left: calc(20% + 50px);
     right: 0;
     bottom: 0;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 60%;
+    background-size: 90%;
     opacity: 0.4;
     z-index: 0;
 }
@@ -113,6 +113,7 @@ body {
 
 .card-content {
     padding: 2rem;
+
     position: relative;
     z-index: 1;
     display: flex;
@@ -127,7 +128,7 @@ body {
     margin-bottom: 1rem;
     line-height: 1.1;
     text-align: left;
-    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    background: linear-gradient(135deg, #FFA155 43%, #FF0028 78%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -152,7 +153,7 @@ body {
     font-weight: 700;
     margin-bottom: 0.25rem;
     text-align: left;
-    background: linear-gradient(135deg, #FFA155 0%, #FF0028 100%);
+    background: linear-gradient(135deg, #FFA155 43%, #FF0028 76%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -164,7 +165,35 @@ body {
     font-size: 11px;
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 2rem;
+    margin-top: -1rem;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.price-subtitle-icon {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 0.5rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+    vertical-align: middle;
+}
+
+.time-icon {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/time.png');
+}
+
+.group-icon {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/group.png');
+}
+
+.who-icon {
+    background-image: url('https://techbbq.dk/wp-content/uploads/2025/01/who.png');
 }
 
 .features {
@@ -186,7 +215,7 @@ body {
 .neon-button {
     position: relative;
     padding: 10px 20px !important;
-    border-radius: 0.625em;
+    border-radius: 12px;
     border: 1px solid #FF0028 !important;
     font-size: 16px !important;
     text-transform: uppercase;
@@ -353,7 +382,7 @@ body {
 
 .button-wrapper * {
     background: none !important;
-    border-radius: 16px;
+    border-radius: 8px;
     border: solid 0px rgb(255, 0, 0, 0.3);
  
 }
