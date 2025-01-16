@@ -668,3 +668,27 @@ tito-overlay .tito-overlay-button:hover {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.time-source-of-truth {
+    display: block;
+    background-color: #f0f0f0;
+    border: 2px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 15px 0;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.non-refundable-note {
+    border: 1px solid rgba(242, 242, 242, 0.5);
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    background: none;
+}
