@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechBBQ 2025 Tickets</title>
-    <script src="https://js.tito.io/v2" async></script>
+    <script src="https://js.tito.io/v2/with/ga4" async></script>
+    <script type="text/javascript">
+        window.tito = window.tito || function() {
+            (tito.q = tito.q || []).push(arguments);
+        };
+
+        tito("on:widget:loaded", function(data) {
+            console.info("[Tito]", "Callback for", "on:widget:loaded", data);
+        });
+
+        tito("on:registration:started", function(data) {
+            console.info("[Tito]", "Callback for", "on:registration:started", data);
+        });
+
+        tito("on:registration:finished", function(data) {
+            console.info("[Tito]", "Callback for", "on:registration:finished", data);
+        });
+    </script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
